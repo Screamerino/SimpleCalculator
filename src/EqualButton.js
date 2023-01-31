@@ -1,8 +1,25 @@
+import React from "react";
+import Button from "./Button";
+import doMath from "./doMath";
 
-export default function EqualButton({ onClick }) {
+export default class EqualButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.execute = this.execute.bind(this);
+  }
+
+  execute() {
+    return doMath(this.props.state);
+  }
+
+  render() {
     return (
-      <button className="calculator__key calculator__key--enter" type="button" onClick={onClick}>
-        =
-      </button>
+      <Button
+        buttonValue="="
+        className="calculator__key--enter"
+        onClick={this.props.onClick}
+        execute={this.execute}
+      />
     );
   }
+}
