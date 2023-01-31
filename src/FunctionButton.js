@@ -1,31 +1,28 @@
-import React from "react";
 import Button from "./Button";
 import doMath from "./doMath";
+import clearState from "./clearState";
 
-export default class FunctionButton extends React.Component {
+export default class FunctionButton extends Button {
   constructor(props) {
     super(props);
     this.execute = this.execute.bind(this);
     this.operator = this.props.buttonValue;
+    this.buttonValue = this.props.buttonValue;
+    this.className = "calculator__key--operator";
   }
 
   execute() {
     let resultState = {};
     if (this.props.state.funcType) {
-      resultState = doMath(this.props.state);
+      try {
+        resultState = doMath(this.props.state);
+      } catch (e) {
+        const state = clearState();
+        state.result = e.message;
+        return state;
+      }
     }
-    resultState.funcType = this.operator;
+    resultState.funcType = this.buttonValue;
     return resultState;
-  }
-
-  render() {
-    return (
-      <Button
-        buttonValue={this.operator}
-        className="calculator__key--operator"
-        onClick={this.props.onClick}
-        execute={this.execute}
-      />
-    );
   }
 }

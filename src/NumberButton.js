@@ -1,46 +1,41 @@
-import React from "react";
 import Button from "./Button";
 
-export default class NumberButton extends React.Component {
+export default class NumberButton extends Button {
   constructor(props) {
     super(props);
     this.execute = this.execute.bind(this);
-    this.num = this.props.buttonValue;
+    this.buttonValue = this.props.buttonValue;
   }
 
   execute() {
     let returnState = {};
+    const num = this.buttonValue;
+    const number = this.props.state.number;
+    const otherNumber = this.props.state.otherNumber;
+    const funcType = this.props.state.funcType;
+
+    const totalExpr = number + (funcType || "") + (otherNumber || "");
 
     if (this.props.state.funcType === null) {
-      if (!this.props.state.number.includes(".") || this.num !== ".") {
+      if ((!number.includes(".") || num !== ".") && number.length < 8) {
         returnState = {
-          number: `${(this.props.state.number + this.num).replace(/^0+/, "")}`,
+          number: num === '.' ? number + num : `${(number + num).replace(/^0?(?!\.)/, "")}`,
         };
       }
     } else {
-      if (this.props.state.otherNumber === null) {
+      if (otherNumber === null) {
         returnState = {
-          otherNumber: `${this.num}`,
+          otherNumber: `${num}`,
         };
       } else if (
-        !this.props.state.otherNumber.includes(".") ||
-        this.num !== "."
+        (!otherNumber.includes(".") || num !== ".") &&
+        totalExpr.length < 12
       ) {
         returnState = {
-          otherNumber: `${this.props.state.otherNumber + this.num}`,
+          otherNumber: `${(otherNumber + num).replace(/^0?(?!\.)/, "")}`,
         };
       }
     }
     return returnState;
-  }
-
-  render() {
-    return (
-      <Button
-        buttonValue={this.num}
-        onClick={this.props.onClick}
-        execute={this.execute}
-      />
-    );
   }
 }

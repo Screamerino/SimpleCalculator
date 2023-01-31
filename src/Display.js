@@ -5,7 +5,7 @@ export default function Display(props) {
         <h2>
           {props.number + (props.funcType || "") + (props.otherNumber || "")}
         </h2>
-        <p>{props.resultNumber}</p>
+        <p>{props.result}</p>
       </div>
     );
   }

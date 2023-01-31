@@ -1,19 +1,27 @@
+
+function cutNumber(number) {
+  return Math.abs(number * 1000) / 1000;
+}
+
 export default function doMath(state) {
   let resultNumber;
 
   if (state.otherNumber) {
     switch (state.funcType) {
       case "+":
-        resultNumber = parseFloat(state.number) + parseFloat(state.otherNumber);
+        resultNumber = cutNumber(parseFloat(state.number) + parseFloat(state.otherNumber));
         break;
       case "-":
-        resultNumber = parseFloat(state.number) - parseFloat(state.otherNumber);
+        resultNumber = cutNumber(parseFloat(state.number) - parseFloat(state.otherNumber));
         break;
       case "*":
-        resultNumber = parseFloat(state.number) * parseFloat(state.otherNumber);
+        resultNumber = cutNumber(parseFloat(state.number) * parseFloat(state.otherNumber));
         break;
       case "/":
-        resultNumber = parseFloat(state.number) / parseFloat(state.otherNumber);
+        if (state.otherNumber === "0") {
+          throw new Error("Zero division error");
+        }
+        resultNumber = cutNumber(parseFloat(state.number) / parseFloat(state.otherNumber));
         break;
       default:
         break;
@@ -23,7 +31,7 @@ export default function doMath(state) {
   }
   return {
     number: resultNumber + "",
-    resultNumber: resultNumber,
+    result: resultNumber,
     otherNumber: null,
     funcType: null,
   };

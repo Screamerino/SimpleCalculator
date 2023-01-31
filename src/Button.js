@@ -5,13 +5,12 @@ export default class Button extends React.Component {
     return (
       <button
         className={
-          "calculator__key" +
-          (this.props.className ? " " + this.props.className : "")
+          "calculator__key" + (this.className ? " " + this.className : "")
         }
         type="button"
-        onClick={() => this.props.onClick(this.props.execute)}
+        onClick={() => this.props.onClick(this.execute)}
       >
-        {this.props.buttonValue}
+        {this.buttonValue}
       </button>
     );
   }

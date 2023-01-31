@@ -15,7 +15,7 @@ class Calculator extends React.Component {
       number: "0",
       otherNumber: null,
       funcType: null,
-      resultNumber: "0",
+      result: "0",
     };
     this.handleClick = this.handleClick.bind(this);
   }
@@ -34,7 +34,7 @@ class Calculator extends React.Component {
           number={this.state.number}
           otherNumber={this.state.otherNumber}
           funcType={this.state.funcType}
-          resultNumber={this.state.resultNumber}
+          result={this.state.result}
         />
         <div className="calculator__keys">
           <ClearButton onClick={this.handleClick} />

@@ -1,10 +1,11 @@
-import React from "react";
+// import React from "react";
 import Button from "./Button";
 
-export default class RemoveButton extends React.Component {
+export default class RemoveButton extends Button {
   constructor(props) {
     super(props);
     this.execute = this.execute.bind(this);
+    this.buttonValue = "<-";
   }
 
   execute() {
@@ -22,19 +23,19 @@ export default class RemoveButton extends React.Component {
     } else {
       let number = this.props.state.number;
       returnState = {
-        number: number.slice(0, number.length - 1),
+        number: number.slice(0, number.length - 1) || "0",
       };
     }
     return returnState;
   }
 
-  render() {
-    return (
-      <Button
-        buttonValue="<-"
-        onClick={this.props.onClick}
-        execute={this.execute}
-      />
-    );
-  }
+  // render() {
+  //   return (
+  //     <Button
+  //       buttonValue="<-"
+  //       onClick={this.props.onClick}
+  //       execute={this.execute}
+  //     />
+  //   );
+  // }
 }
