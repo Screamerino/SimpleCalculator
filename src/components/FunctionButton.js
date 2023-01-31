@@ -1,6 +1,6 @@
 import Button from "./Button";
-import doMath from "./doMath";
-import clearState from "./clearState";
+import doMath from "../utils/doMath";
+import clearState from "../utils/clearState"
 
 export default class FunctionButton extends Button {
   execute() {

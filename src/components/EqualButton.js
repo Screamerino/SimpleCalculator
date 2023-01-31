@@ -1,6 +1,6 @@
 import Button from "./Button";
-import clearState from "./clearState";
-import doMath from "./doMath";
+import clearState from "../utils/clearState"
+import doMath from "../utils/doMath";
 
 export default class EqualButton extends Button {
   execute() {

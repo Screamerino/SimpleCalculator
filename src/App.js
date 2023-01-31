@@ -1,12 +1,12 @@
-import "./App.css";
+import "./assets/App.css";
 import React from "react";
-import Display from "./Display";
-import ClearButton from "./ClearButton";
-import RemoveButton from "./RemoveButton";
-import ProcentButton from "./ProcentButton";
-import FunctionButton from "./FunctionButton";
-import NumberButton from "./NumberButton";
-import EqualButton from "./EqualButton";
+import Display from "./components/Display";
+import ClearButton from "./components/ClearButton";
+import RemoveButton from "./components/RemoveButton";
+import ProcentButton from "./components/ProcentButton";
+import FunctionButton from "./components/FunctionButton";
+import NumberButton from "./components/NumberButton";
+import EqualButton from "./components/EqualButton";
 
 class Calculator extends React.Component {
   constructor(props) {
