@@ -1,6 +1,6 @@
 
-function cutNumber(number) {
-  return Math.abs(number * 1000) / 1000;
+export function cutNumber(number) {
+  return Math.round(number * 1000) / 1000;
 }
 
 export default function doMath(state) {
@@ -31,7 +31,7 @@ export default function doMath(state) {
   }
   return {
     number: resultNumber + "",
-    result: resultNumber,
+    result: resultNumber + "",
     otherNumber: null,
     funcType: null,
   };

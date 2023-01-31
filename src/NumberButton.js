@@ -1,15 +1,9 @@
 import Button from "./Button";
 
 export default class NumberButton extends Button {
-  constructor(props) {
-    super(props);
-    this.execute = this.execute.bind(this);
-    this.buttonValue = this.props.buttonValue;
-  }
-
   execute() {
     let returnState = {};
-    const num = this.buttonValue;
+    const num = this.props.buttonValue;
     const number = this.props.state.number;
     const otherNumber = this.props.state.otherNumber;
     const funcType = this.props.state.funcType;

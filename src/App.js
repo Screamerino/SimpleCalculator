@@ -37,14 +37,20 @@ class Calculator extends React.Component {
           result={this.state.result}
         />
         <div className="calculator__keys">
-          <ClearButton onClick={this.handleClick} />
-          <RemoveButton state={this.state} onClick={this.handleClick} />
+          <ClearButton buttonValue="AC" onClick={this.handleClick} />
+          <RemoveButton
+            buttonValue="<-"
+            state={this.state}
+            onClick={this.handleClick}
+          />
           <ProcentButton
-            number={this.state.number}
+            buttonValue="%"
+            state={this.state}
             onClick={this.handleClick}
           />
           <FunctionButton
             buttonValue="/"
+            className="calculator__key--operator"
             state={this.state}
             onClick={this.handleClick}
           />
@@ -65,6 +71,7 @@ class Calculator extends React.Component {
           />
           <FunctionButton
             buttonValue="*"
+            className="calculator__key--operator"
             state={this.state}
             onClick={this.handleClick}
           />
@@ -85,6 +92,7 @@ class Calculator extends React.Component {
           />
           <FunctionButton
             buttonValue="-"
+            className="calculator__key--operator"
             state={this.state}
             onClick={this.handleClick}
           />
@@ -105,6 +113,7 @@ class Calculator extends React.Component {
           />
           <FunctionButton
             buttonValue="+"
+            className="calculator__key--operator"
             state={this.state}
             onClick={this.handleClick}
           />
@@ -118,7 +127,12 @@ class Calculator extends React.Component {
             state={this.state}
             onClick={this.handleClick}
           />
-          <EqualButton state={this.state} onClick={this.handleClick} />
+          <EqualButton
+            buttonValue="="
+            className="calculator__key--enter"
+            state={this.state}
+            onClick={this.handleClick}
+          />
         </div>
       </div>
     );
