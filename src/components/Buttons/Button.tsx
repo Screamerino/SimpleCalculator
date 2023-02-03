@@ -1,6 +1,18 @@
 import React from "react";
+import {ResultState} from "../../App"
 
-export default class Button extends React.Component {
+export interface Props {
+  buttonValue: string,
+  onClick: (execute: () => ResultState) => void,
+  className?: string
+}
+
+export type ExecutorFunc = () => ResultState;
+
+export default abstract class Button extends React.Component {
+  abstract execute(): ResultState;
+  props!: Props;
+  
   render() {
     return (
       <button

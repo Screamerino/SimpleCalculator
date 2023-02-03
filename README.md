@@ -1,6 +1,6 @@
 # SimpleCalculator
 
-![Alt text](calculator_screen.png?raw=true "Calculator")
+![Alt text](public/calculator_screen.png?raw=true "Calculator")
 
 ## Available Scripts
 

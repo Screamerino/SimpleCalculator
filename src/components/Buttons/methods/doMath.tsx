@@ -1,9 +1,11 @@
 
-export function cutNumber(number) {
+import { State } from "../../../App";
+
+export function cutNumber(number: number): number {
   return Math.round(number * 1000) / 1000;
 }
 
-export default function doMath(state) {
+export default function doMath(state: State) {
   let resultNumber;
 
   if (state.otherNumber) {

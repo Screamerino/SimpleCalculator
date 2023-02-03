@@ -1,6 +1,7 @@
 import Button from "./Button";
+import StateButton from "./StateButton";
 
-export default class RemoveButton extends Button {
+export default class RemoveButton extends StateButton {
   execute() {
     let returnState;
     

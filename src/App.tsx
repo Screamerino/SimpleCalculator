@@ -1,15 +1,32 @@
 import "./assets/App.css";
 import React from "react";
-import Display from "./components/Display";
-import ClearButton from "./components/ClearButton";
-import RemoveButton from "./components/RemoveButton";
-import ProcentButton from "./components/ProcentButton";
-import FunctionButton from "./components/FunctionButton";
-import NumberButton from "./components/NumberButton";
-import EqualButton from "./components/EqualButton";
+import { PropsWithChildren } from "react";
+
+import Display from "./components/Display/Display";
+import ClearButton from "./components/Buttons/ClearButton";
+import RemoveButton from "./components/Buttons/RemoveButton";
+import ProcentButton from "./components/Buttons/ProcentButton";
+import FunctionButton from "./components/Buttons/FunctionButton";
+import NumberButton from "./components/Buttons/NumberButton";
+import EqualButton from "./components/Buttons/EqualButton";
+import { ExecutorFunc } from "./components/Buttons/Button";
+
+
+export interface State {
+  number: string,
+  otherNumber: string | null,
+  funcType: string | null,
+  result: string
+}
+
+export type ResultState = {
+  [Property in keyof State]+?: State[Property]; 
+}
 
 class Calculator extends React.Component {
-  constructor(props) {
+  state: State;
+
+  constructor(props: PropsWithChildren) {
     super(props);
     this.state = {
       number: "0",
@@ -20,7 +37,7 @@ class Calculator extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(executor) {
+  handleClick(executor: ExecutorFunc) {
     const obj = executor();
     if (obj) {
       this.setState(obj);
@@ -31,10 +48,7 @@ class Calculator extends React.Component {
     return (
       <div className="calculator">
         <Display
-          number={this.state.number}
-          otherNumber={this.state.otherNumber}
-          funcType={this.state.funcType}
-          result={this.state.result}
+          state={this.state}
         />
         <div className="calculator__keys">
           <ClearButton buttonValue="AC" onClick={this.handleClick} />

@@ -1,6 +1,6 @@
-import Button from "./Button";
+import StateButton from "./StateButton";
 
-export default class NumberButton extends Button {
+export default class NumberButton extends StateButton {
   execute() {
     let returnState = {};
     const num = this.props.buttonValue;
