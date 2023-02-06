@@ -1,5 +1,5 @@
-import clearState from "./methods/clearState"
-import doMath from "./methods/doMath";
+import clearState from "../methods/clearState"
+import doMath from "../methods/doMath";
 import StateButton from "./StateButton";
 
 export default class EqualButton extends StateButton {  

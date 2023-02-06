@@ -1,4 +1,3 @@
-import Button from "./Button";
 import StateButton from "./StateButton";
 
 export default class RemoveButton extends StateButton {

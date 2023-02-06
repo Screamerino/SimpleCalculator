@@ -1,5 +1,5 @@
 
-import { State } from "../../../App";
+import { State } from "../../types/state.type";
 
 export function cutNumber(number: number): number {
   return Math.round(number * 1000) / 1000;

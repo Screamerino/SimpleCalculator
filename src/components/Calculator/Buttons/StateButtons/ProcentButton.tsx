@@ -1,6 +1,6 @@
 import StateButton from "./StateButton";
-import clearState from "./methods/clearState"
-import {default as doMath, cutNumber} from "./methods/doMath";
+import clearState from "../methods/clearState"
+import {default as doMath, cutNumber} from "../methods/doMath";
 
 export default class ProcentButton extends StateButton {
   execute() {

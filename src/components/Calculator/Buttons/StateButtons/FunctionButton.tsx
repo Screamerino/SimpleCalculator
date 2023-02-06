@@ -1,7 +1,7 @@
-import doMath from "./methods/doMath";
-import clearState from "./methods/clearState"
+import doMath from "../methods/doMath";
+import clearState from "../methods/clearState"
 import StateButton from "./StateButton";
-import { ResultState } from "../../App";
+import { ResultState } from "../../types/state.type";
 
 export default class FunctionButton extends StateButton {
   execute() {

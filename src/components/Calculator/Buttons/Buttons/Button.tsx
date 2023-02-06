@@ -1,5 +1,5 @@
 import React from "react";
-import {ResultState} from "../../App"
+import { ResultState } from "../../types/state.type"; 
 
 export interface Props {
   buttonValue: string,
@@ -9,9 +9,8 @@ export interface Props {
 
 export type ExecutorFunc = () => ResultState;
 
-export default abstract class Button extends React.Component {
+export default abstract class Button<P extends Props = Props> extends React.Component<P> {
   abstract execute(): ResultState;
-  props!: Props;
   
   render() {
     return (
