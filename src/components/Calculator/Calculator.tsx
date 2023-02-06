@@ -2,13 +2,13 @@ import React from "react";
 import { PropsWithChildren } from "react";
 
 import Display from "./Display/Display";
-import ClearButton from "./Buttons/Buttons/ClearButton";
+import ClearButton from "./Buttons/NoStateButtons/ClearButton";
 import RemoveButton from "./Buttons/StateButtons/RemoveButton";
 import ProcentButton from "./Buttons/StateButtons/ProcentButton";
 import FunctionButton from "./Buttons/StateButtons/FunctionButton";
 import NumberButton from "./Buttons/StateButtons/NumberButton";
 import EqualButton from "./Buttons/StateButtons/EqualButton";
-import { ExecutorFunc } from "./Buttons/Buttons/Button";
+import { ExecutorFunc } from "./Buttons/NoStateButtons/Button";
 import { State } from "./types/state.type";
 
 export default class Calculator extends React.Component<PropsWithChildren, State> {

@@ -1,4 +1,4 @@
-import Button, { Props } from "../Buttons/Button";
+import Button, { Props } from "../NoStateButtons/Button";
 import { State } from "../../types/state.type";
 
 export interface PropsWithState extends Props {
