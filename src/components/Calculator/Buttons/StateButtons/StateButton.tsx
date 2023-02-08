@@ -1,9 +1,5 @@
-import Button, { Props } from "../NoStateButtons/Button";
-import { State } from "../../types/state.type";
+import Button from "../NoStateButtons/Button";
+import { StateProps } from "../../types/props.type";
 
-export interface PropsWithState extends Props {
-  state: State
-}
-
-export default abstract class StateButton extends Button<PropsWithState> {
+export default abstract class StateButton extends Button<StateProps> {
 }

@@ -1,15 +1,9 @@
 import React from "react";
+import { StatelessProps } from "../../types/props.type";
 import { ResultState } from "../../types/state.type"; 
 
-export interface Props {
-  buttonValue: string,
-  onClick: (execute: () => ResultState) => void,
-  className?: string
-}
 
-export type ExecutorFunc = () => ResultState;
-
-export default abstract class Button<P extends Props = Props> extends React.Component<P> {
+export default abstract class Button<P extends StatelessProps = StatelessProps> extends React.Component<P> {
   abstract execute(): ResultState;
   
   render() {
